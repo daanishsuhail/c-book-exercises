@@ -1,6 +1,5 @@
 /*
- * program1_2.c: A program meant to generate primes by seeing if a number
- * divides nicely by an integer smaller than half of its value.
+ * ex2.c: A solution to exercise 1.2.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,6 +8,8 @@ int main()
 {
     int this_number, divisor, not_prime;
     this_number = 3;
+
+    int previousprime = 3;
 
     while (this_number < 10000)
     {
@@ -28,7 +29,11 @@ int main()
         }
         if (not_prime == 0)
         {
-            printf("%d is a prime number\n", this_number);
+            if ((this_number - previousprime) == 2)
+            {
+                printf("Primes %d and %d have difference 2.\n", this_number, previousprime);
+            }
+            previousprime = this_number;
         }
         this_number = this_number + 1;
     }
