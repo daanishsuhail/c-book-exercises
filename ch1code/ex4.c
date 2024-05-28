@@ -56,7 +56,7 @@ int main()
         digitPosition = 0;
         while (digitPosition < (count1 - 1))
         {
-            if (digitArr[digitPosition] < digitArr[(digitPosition + 1)])
+            if (digitArr[digitPosition] > digitArr[(digitPosition + 1)])
             {
                 int temp;
                 temp = digitArr[digitPosition];
@@ -68,7 +68,7 @@ int main()
         digitPosition = 0;
         while (digitPosition < (count1 - 1))
         {
-            if (digitArr[digitPosition] >= digitArr[digitPosition + 1])
+            if (digitArr[digitPosition] <= digitArr[digitPosition + 1])
             {
                 bubbleCount++;
             }
