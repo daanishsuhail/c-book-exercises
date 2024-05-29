@@ -88,25 +88,35 @@ int main()
     }
     printf("\n");
 
-    /* Prints the values in hex */
-    int hexChars[6] = {'A', 'B', 'C', 'D', 'E', 'F'};
+    decLocation = 0;
 
-    printf("(Left LSB)Hexadecimal Value: ");
+    /* Prints the values in hex */
+    int hexChars[6] = {'a', 'b', 'c', 'd', 'e', 'f'};
+
+    printf("Hexadecimal Value: ");
     while (hexValue != 0)
     {
-        if ((hexValue % 16) > 9)
-        {
-            printf("%c ", hexChars[(hexValue % 16) - 10]);
-        }
-        else
-        {
-            printf("%d ", hexValue % 16);
-        }
+        decStore[decLocation] = hexValue % 16;
+        decLocation++;
         if ((hexValue % 16) != 0)
         {
             hexValue = hexValue - (hexValue % 16);
         }
         hexValue = hexValue / 16;
+    }
+
+    decLocation--;
+    while (decLocation >= 0)
+    {
+        if ((decStore[decLocation] % 16) > 9)
+        {
+            printf("%c", hexChars[decStore[decLocation] - 10]);
+        }
+        else
+        {
+            printf("%d", decStore[decLocation]);
+        }
+        decLocation--;
     }
     printf("\n");
 
