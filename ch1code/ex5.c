@@ -62,17 +62,29 @@ int main()
     int binaryValue = finalValue;
 
     /* Prints the decimal values. */
-    printf("Decimal: %d\n(Left LSB) Binary: ", finalValue);
+    printf("Decimal: %d\nBinary: ", finalValue);
 
     /* Prints out the number in binary left bit is LSB. */
+    int decStore[ARRSIZE];
+    int decLocation = 0;
+
     while (binaryValue != 0)
     {
-        printf("%d", binaryValue % 2);
+        decStore[decLocation] = (binaryValue % 2);
+        decLocation++;
         if ((binaryValue % 2) == 1)
         {
             binaryValue = binaryValue - 1;
         }
         binaryValue = binaryValue / 2;
+    }
+
+    decLocation--;
+
+    while (decLocation >= 0)
+    {
+        printf("%d", decStore[decLocation]);
+        decLocation--;
     }
     printf("\n");
 
