@@ -30,5 +30,5 @@ int main()
     printf("First line"
            "second line");
 
-    return 0;
+        return 0;
 }
