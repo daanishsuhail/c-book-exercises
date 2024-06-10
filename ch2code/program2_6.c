@@ -1,7 +1,7 @@
 /**
  * @file program2_6.c: This program was designed to demonstrate how unsigned
  * integers are incapable of overflowing.
- */
+ **/
 
 #include <stdio.h>
 
